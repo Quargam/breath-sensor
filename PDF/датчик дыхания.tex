@@ -67,7 +67,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height= 5cm]{stm}
-		\caption{Arduino Nano}
+		\caption{Микроконтроллер на stm}
 	\end{figure}
 
 \item \textbf{Питание}. Питание схемы будет осуществляться через подключение к ноутбуду через мини usb. 
@@ -100,16 +100,31 @@
 \end{center}
 \end{figure}
 \end{enumerate}
-\section{Контсрукция}
+\section{Контсрукция тензодатчиков}
 \begin{enumerate}
 
 \item В конструкции будут использоватся 2 тензодатчика, основа. Конструкция будет находится на груди.
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[height= 8cm]{конструкция_3}
-		\caption{конструкция}
+		\includegraphics[height= 8cm]{конструкция_4}
+		\caption{конструкция тензодатчиков}
+	\end{figure}
+\section{Собранная схема}
+
+Схема состоит из тензодатчиков, АЦП HX711, stm32, uart конвертора(для оющения с  COM-портом). Тензодатчики крепятся к груди с помощью резинки. Из полученных точек можно построить график (рис.9). Видно что первая половина графика соответсвует дыханию человека. На вротой половине график зависимости когда человек крудится и шевелит  руками. Из двух тензодаитчиков работает только один.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height= 8cm]{8}
+		\caption{Собраная схема}
 	\end{figure}
 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height= 8cm]{9}
+		\caption{график полученных значений}
+	\end{figure}	
+	
 \end{enumerate} 
 \end{document}

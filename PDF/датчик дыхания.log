@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.18)  17 MAY 2022 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.18)  27 JUL 2022 20:00
 entering extended mode
 **"./датчик дыхания.tex"
 (датчик дыхания.tex
@@ -1163,7 +1163,7 @@ LaTeX Info: Redefining \nameref on input line 10.
 \openout4 = `"датчик дыхания.out"'.
 
  (title.tex
-<images//frkt_logo.pdf, id=27, 845.04686pt x 597.50786pt>
+<images//frkt_logo.pdf, id=31, 845.04686pt x 597.50786pt>
 File: images//frkt_logo.pdf Graphic file (type pdf)
 <use images//frkt_logo.pdf>
 Package pdftex.def Info: images//frkt_logo.pdf  used on input line 27.
@@ -1264,7 +1264,7 @@ LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line
  (C:\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-<images//фото_1.png, id=60, 608.87476pt x 441.44925pt>
+<images//фото_1.png, id=65, 608.87476pt x 441.44925pt>
 File: images//фото_1.png Graphic file (type png)
 <use images//фото_1.png>
 Package pdftex.def Info: images//фото_1.png  used on input line 48.
@@ -1279,12 +1279,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3 <./images//фото_1.png>]
-<images//3.jpg, id=71, 1004.75375pt x 1004.75375pt>
+<images//3.jpg, id=76, 1004.75375pt x 1004.75375pt>
 File: images//3.jpg Graphic file (type jpg)
 <use images//3.jpg>
 Package pdftex.def Info: images//3.jpg  used on input line 61.
 (pdftex.def)             Requested size: 142.25902pt x 142.26378pt.
-<images//stm.jpg, id=72, 1003.75pt x 564.1075pt>
+<images//stm.jpg, id=77, 1003.75pt x 564.1075pt>
 File: images//stm.jpg Graphic file (type jpg)
 <use images//stm.jpg>
 Package pdftex.def Info: images//stm.jpg  used on input line 69.
@@ -1301,7 +1301,7 @@ Overfull \hbox (6.25905pt too wide) in paragraph at lines 77--78
  ���-���-��-��� ����-�� (���.5). 
  []
 
-<images//6.jpg, id=73, 97.11874pt x 97.11874pt>
+<images//6.jpg, id=78, 97.11874pt x 97.11874pt>
 File: images//6.jpg Graphic file (type jpg)
 <use images//6.jpg>
 Package pdftex.def Info: images//6.jpg  used on input line 81.
@@ -1315,22 +1315,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4 <./images//3.jpg> <./images//stm.jpg> <./images//6.jpg>]
-<images//5.jpg, id=83, 730.22812pt x 730.22812pt>
+<images//5.jpg, id=88, 730.22812pt x 730.22812pt>
 File: images//5.jpg Graphic file (type jpg)
 <use images//5.jpg>
 Package pdftex.def Info: images//5.jpg  used on input line 90.
 (pdftex.def)             Requested size: 142.25462pt x 142.26378pt.
-<images//7.jpg, id=84, 526.96875pt x 526.96875pt>
+<images//7.jpg, id=89, 526.96875pt x 526.96875pt>
 File: images//7.jpg Graphic file (type jpg)
 <use images//7.jpg>
 Package pdftex.def Info: images//7.jpg  used on input line 96.
 (pdftex.def)             Requested size: 142.26738pt x 142.26378pt.
-<images//конструкция_3.png, id=85, 596.82974pt x 424.58624pt>
-File: images//конструкция_3.png Graphic file (type png)
-<use images//конструкция_3.png>
-Package pdftex.def Info: images//конструкция_3.png  used on input li
+<images//конструкция_4.png, id=90, 569.12625pt x 322.20375pt>
+File: images//конструкция_4.png Graphic file (type png)
+<use images//конструкция_4.png>
+Package pdftex.def Info: images//конструкция_4.png  used on input li
 ne 110.
-(pdftex.def)             Requested size: 319.961pt x 227.62204pt.
+(pdftex.def)             Requested size: 402.07643pt x 227.62204pt.
+<images//8.jpg, id=91, 1606.0pt x 1200.485pt>
+File: images//8.jpg Graphic file (type jpg)
+<use images//8.jpg>
+Package pdftex.def Info: images//8.jpg  used on input line 119.
+(pdftex.def)             Requested size: 304.50603pt x 227.62204pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images//9.jpg, id=92, 758.835pt x 426.59375pt>
+File: images//9.jpg Graphic file (type jpg)
+<use images//9.jpg>
+Package pdftex.def Info: images//9.jpg  used on input line 125.
+(pdftex.def)             Requested size: 404.91325pt x 227.62204pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1340,23 +1356,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5 <./images//5.jpg> <./images//7.jpg> <./images//конструкция_3.png>
-] (датчик дыхания.aux)
+[5 <./images//5.jpg> <./images//7.jpg> <./images//конструкция_4.png>
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6 <./images//8.jpg> <./images//9.jpg>] (датчик дыхания.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `"датчик дыхания".out' has not c
 hanged.
-(rerunfilecheck)             Checksum: 08F015E83ACBD270631E61199BAA804A;693.
+(rerunfilecheck)             Checksum: 3CE6439DDF34FB8FCA12A320FA564C23;968.
  ) 
 Here is how much of TeX's memory you used:
- 28115 strings out of 478864
- 523829 string characters out of 2865142
+ 28146 strings out of 478864
+ 524102 string characters out of 2865142
  835467 words of memory out of 3000000
- 45414 multiletter control sequences out of 15000+600000
+ 45439 multiletter control sequences out of 15000+600000
  419538 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,12n,86p,502b,1257s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,12n,86p,740b,1257s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt1
 200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
 labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dp
@@ -1366,9 +1391,9 @@ i600\labx1728.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
 ur/lh/lh-t2a/dpi600\labx2488.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk
 /ljfour/lh/lh-t2a/dpi600\larm1728.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk>
-Output written on "датчик дыхания.pdf" (5 pages, 2191147 bytes).
+Output written on "датчик дыхания.pdf" (6 pages, 3085675 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
