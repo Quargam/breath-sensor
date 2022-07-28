@@ -54,6 +54,14 @@
 
 \url{https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf}
 
+\textbf{Спецификация HX711}
+ \begin{enumerate}
+ \item[1] Разрядность АЦП: 24 бит;
+ \item[2] Коэффициент усиления: Вход А: 64 или 128;
+ \item[3] Частота измерений: 80 Гц;
+ \item[4] Напряжение питания: 5В;
+ \item[5] Потребляемый ток: до 10 мА;;
+ \end{enumerate}
 \newpage
 
 	\begin{figure}[h]
@@ -112,19 +120,32 @@
 	\end{figure}
 \section{Собранная схема}
 
-Схема состоит из тензодатчиков, АЦП HX711, stm32, uart конвертора(для оющения с  COM-портом). Тензодатчики крепятся к груди с помощью резинки. Из полученных точек можно построить график (рис.9). Видно что первая половина графика соответсвует дыханию человека. На вротой половине график зависимости когда человек крудится и шевелит  руками. Из двух тензодаитчиков работает только один.
+Схема состоит из тензодатчиков, АЦП HX711, stm32, uart конвертора(для оющения с  COM-портом). Тензодатчики крепятся к груди с помощью резинки. Из полученных точек можно построить график (рис.9). Фактическая частота снятия данных 90 Гц. Видно что первая половина графика соответсвует дыханию человека. На третьем вдохе испытуемый говорил. Из двух тензодаитчиков работает только один.
+
+На рисунке 10 можно увидеть как датчик крепится к человеку.
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[height= 8cm]{8}
+		\includegraphics[height= 7cm]{8}
 		\caption{Собраная схема}
 	\end{figure}
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[height= 8cm]{9}
+		\includegraphics[height= 7cm]{Figure_1}
 		\caption{график полученных значений}
 	\end{figure}	
 	
+Массив данных в .csv файле: 
+\url{https://github.com/Quargam/breath-sensor/tree/main/code/PySerial}	
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height= 5cm]{10}
+		\caption{крепление датчика}
+	\end{figure}	
+		
+	
+
 \end{enumerate} 
 \end{document}

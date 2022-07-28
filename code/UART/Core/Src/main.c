@@ -91,8 +91,10 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  float coef;
+  coef = 390;
   hx711_init(&loadcell, GPIOA, GPIO_PIN_4, GPIOA, GPIO_PIN_5);
-  hx711_coef_set(&loadcell, 390); // read afer calibration
+  hx711_coef_set(&loadcell, coef); // read afer calibration
   hx711_tare(&loadcell, 10);
   /* USER CODE END 2 */
 
@@ -107,15 +109,22 @@ int main(void)
 //  sprintf(str, "Проверка спецификаторов типа\n x=%d\n x=%x\n y=%d.%03d\n z=%c\n str1=%s\n ------------\n", x, x, (uint32_t)y,(uint16_t)((y - (uint32_t)y)*1000.), z, str1);
   while (1)
   {
+	  uint8_t state = HAL_UART_GetState(&huart2);
+	    if( (state != HAL_UART_STATE_BUSY_RX) && (state != HAL_UART_STATE_BUSY_TX_RX) ) {
+
+	      while( HAL_UART_Transmit_IT(&huart2, str, 1) == HAL_BUSY );
+	      HAL_UART_Receive_IT (&huart2, str, 1);
+	    }
 //	  HAL_UART_Transmit(&huart2, TX_data, strlen((char *)TX_data), 0xFFFF);
 //	  HAL_Delay(1000);
 //	HAL_Delay(500);
 //	  HAL_Delay(50);
 	weight = hx711_weight(&loadcell, 1);
-	weight = weight - (float)2179;
+//	weight = weight - (float)2179;
+	weight = weight;
 	sprintf(str_weight, "weight=%d.%03d\n",(uint32_t)weight,(uint16_t)((weight - (uint32_t)weight)*1000.));
 //	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9);
-	  HAL_UART_Transmit(&huart2, str_weight, strlen((char *)str_weight), 150);
+	  HAL_UART_Transmit(&huart2, str_weight, strlen((char *)str_weight), 100);
 //	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -179,7 +188,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 9600;
+  huart2.Init.BaudRate = 230400;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -193,11 +202,6 @@ static void MX_USART2_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART2_Init 2 */
-  huart2.Init.BaudRate = 9600;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE END USART2_Init 2 */
 
 }
