@@ -9,7 +9,7 @@ def main():
     x_list = []
     y_list = []
     try:
-        ArduinoSerial = serial.Serial('com4', 230400)
+        ArduinoSerial = serial.Serial('com4', 115200)
         now_start = datetime.datetime.now()
         times_start = now_start.microsecond / 1000. + now_start.second * 1000. + now_start.minute * 60 * 1000. + now_start.hour * 60 * 60 * 1000.
         # time.sleep(1)
@@ -30,5 +30,13 @@ def main():
         plt.plot(y_list, x_list, label='test')
         plt.legend()
         plt.show()
+
+def exemple():
+    ArduinoSerial = serial.Serial('COM5', 115200)
+    while True:
+        text = ArduinoSerial.readline()
+        print(text)
+
 if __name__ == '__main__':
+    # exemple()
     main()

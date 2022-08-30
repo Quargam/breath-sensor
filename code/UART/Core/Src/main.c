@@ -56,7 +56,6 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 #include "hx711.h"
-
 hx711_t loadcell;
 float weight;
 /* USER CODE END 0 */
@@ -93,7 +92,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   float coef;
   coef = 390;
-  hx711_init(&loadcell, GPIOA, GPIO_PIN_4, GPIOA, GPIO_PIN_5);
+  float val_offset;
+  val_offset = 0;
+  hx711_init(&loadcell, GPIOB, GPIO_PIN_6, GPIOB, GPIO_PIN_7);
   hx711_coef_set(&loadcell, coef); // read afer calibration
   hx711_tare(&loadcell, 10);
   /* USER CODE END 2 */
@@ -102,26 +103,32 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   uint8_t str_weight[50];
   uint8_t str[100];
+  HAL_Delay(500);
+  sprintf(str, "!%d.%03d;%d.%03d\n",(uint32_t)coef,(uint16_t)((coef - (uint32_t)coef)*1000.),(uint32_t)val_offset,(uint16_t)((val_offset - (uint32_t)val_offset)*1000.));
+  HAL_UART_Transmit(&huart2, str, strlen((char *)str), 500);
 //  uint32_t x= 12345;
 //  float y= 1.2345678;
 //  uint8_t z= 0x61;
 //  char str1[]= "Строка\0";
 //  sprintf(str, "Проверка спецификаторов типа\n x=%d\n x=%x\n y=%d.%03d\n z=%c\n str1=%s\n ------------\n", x, x, (uint32_t)y,(uint16_t)((y - (uint32_t)y)*1000.), z, str1);
+
   while (1)
   {
-	  uint8_t state = HAL_UART_GetState(&huart2);
-	    if( (state != HAL_UART_STATE_BUSY_RX) && (state != HAL_UART_STATE_BUSY_TX_RX) ) {
 
-	      while( HAL_UART_Transmit_IT(&huart2, str, 1) == HAL_BUSY );
-	      HAL_UART_Receive_IT (&huart2, str, 1);
-	    }
+//	  uint8_t state = HAL_UART_GetState(&huart2);
+//	    if( (state != HAL_UART_STATE_BUSY_RX) && (state != HAL_UART_STATE_BUSY_TX_RX) ) {
+//
+//	      while( HAL_UART_Transmit_IT(&huart2, str, 10) == HAL_BUSY );
+////	      sprintf(str, "str:=%s\n",str);
+//	      HAL_UART_Receive_IT (&huart2, str, 10);
+//	    }
 //	  HAL_UART_Transmit(&huart2, TX_data, strlen((char *)TX_data), 0xFFFF);
 //	  HAL_Delay(1000);
 //	HAL_Delay(500);
 //	  HAL_Delay(50);
 	weight = hx711_weight(&loadcell, 1);
 //	weight = weight - (float)2179;
-	weight = weight;
+	weight = weight - val_offset;
 	sprintf(str_weight, "weight=%d.%03d\n",(uint32_t)weight,(uint16_t)((weight - (uint32_t)weight)*1000.));
 //	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9);
 	  HAL_UART_Transmit(&huart2, str_weight, strlen((char *)str_weight), 100);
@@ -188,7 +195,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 230400;
+  huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -248,6 +255,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB6 PB7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB9 */
   GPIO_InitStruct.Pin = GPIO_PIN_9;
